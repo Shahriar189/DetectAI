@@ -1,0 +1,2 @@
+# DetectAI
+AI Content Detector
