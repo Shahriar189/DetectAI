@@ -36,7 +36,7 @@ def predict():
     print(prob_percentage_0_formatted)
     print(prob_percentage_1_formatted)
 
-    return render_template('index.html', prediction=prediction, message=message, prob_percentage_0_formatted=prob_percentage_0_formatted, prob_percentage_1_formatted=prob_percentage_1_formatted)
+    return render_template('index.html', prediction=prediction[0], message=message, prob_percentage_0_formatted=prob_percentage_0_formatted, prob_percentage_1_formatted=prob_percentage_1_formatted)
 
 if __name__ == '__main__':
     app.run(debug=True)
