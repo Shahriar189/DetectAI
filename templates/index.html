@@ -187,10 +187,19 @@
   <button  class="inline-flex text-white bg-gray-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg " onclick="validateWordCount()" >DETECT TEXT</button>
   <a href="/">Reset</a>
 
+<div class="mt-4"><h4>Prediction:</h4>
+{%if prediction[0]==0%}
+<h2> <b><span style="color: green;">This text is Human generated</span></b></h2>
+{%elif prediction[0]==1%}
+<h2> <b><span style="color: red;">This text is AI generated</span></b></h2>
+{%endif%}
+</div>
+
+<!-- form box end -->
 
   {% if prediction is not none %}
 <div class="mt-4">
-  <h4>Prediction:</h4>
+  <h4>Prediction Probability:</h4>
   <div class="progress" style="height: 50px;">
     <div class="progress-bar bg-success" role="progressbar" style="width: {{ prob_percentage_0_formatted }}%" aria-valuenow="{{ prob_percentage_0_formatted }}" aria-valuemin="0" aria-valuemax="100"><b>Human:{{ prob_percentage_0_formatted }}%</b></div>
     <div class="progress-bar bg-danger" role="progressbar" style="width: {{ prob_percentage_1_formatted }}%" aria-valuenow="{{ prob_percentage_1_formatted }}" aria-valuemin="0" aria-valuemax="100"><b>Ai:{{ prob_percentage_1_formatted }}%</b></div>
@@ -201,11 +210,6 @@
 
 </form>
 
-{%if prediction==0%}
-<br> <h2> <b><span style="color: green;">This text is Human generated</span></b></h2>
-{%elif prediction==1%}
-<br> <h2> <b><span style="color: red;">This text is AI generated</span></b></h2>
-{%endif%}
 
 
 <!-- form box end -->
